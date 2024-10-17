@@ -16,7 +16,7 @@ public class SimpleClass <T extends User> {
         this.users = Arrays.asList(arrUsrs);
     }
 
-    public void performSomething() { // 9.10. - 2.glasovna 47.50 minuta
+    public void performSomething() {// 9.10. - 2.glasovna 47.50 minuta
         if (users.isEmpty()) {
             System.out.println("There is no users to perform something!");
         } else {
