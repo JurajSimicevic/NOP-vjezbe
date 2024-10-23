@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface SaveDataStrategy {
 
-    <E> void saveDataToFile(String filePath, List<E> data);
+    void saveDataToFile(String filePath, List<E> data);
 }
