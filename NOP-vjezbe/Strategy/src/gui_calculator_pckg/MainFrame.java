@@ -23,6 +23,13 @@ public class MainFrame extends JFrame {
     }
 
     private void activateMainFrame() {
+
+        formPanel.setFormPanelListener(new FormPanelListener() {
+            @Override
+            public void formPanelEventOccurred(CalculationFormData formRecord) {
+                viewPanel.addTextToViewPanel(formRecord);
+            }
+        });
     }
 
     private void layoutComps() {

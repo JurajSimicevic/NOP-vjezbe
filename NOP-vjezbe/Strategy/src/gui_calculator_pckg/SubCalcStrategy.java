@@ -5,4 +5,9 @@ public class SubCalcStrategy implements CalculationStrategy{
     public double performCalculation(double fst, double snd) {
         return fst - snd;
     }
+
+    @Override
+    public String toString() {
+        return "Subtracting";
+    }
 }
