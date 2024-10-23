@@ -7,6 +7,7 @@ public class MainFrame extends JFrame {
 
     private ViewPanel viewPanel;
     private FormPanel formPanel;
+    private ToolBar toolBar;
 
     public MainFrame() {
 
@@ -36,11 +37,13 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
         add(viewPanel, BorderLayout.CENTER);
         add(formPanel, BorderLayout.SOUTH);
+        add(toolBar, BorderLayout.NORTH);
     }
 
     private void initComps() {
 
         viewPanel = new ViewPanel();
         formPanel = new FormPanel();
+        toolBar = new ToolBar();
     }
 }
