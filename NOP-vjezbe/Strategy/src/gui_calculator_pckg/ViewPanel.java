@@ -12,7 +12,7 @@ public class ViewPanel extends JPanel {
 
         textArea = new JTextArea();
         scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-//        setLayout(new BorderLayout());
+        setLayout(new BorderLayout());
         add(scrollPane, BorderLayout.CENTER);
     }
 }
