@@ -11,4 +11,24 @@ public record CalculationFormData(double fst, double snd, double result, Calcula
                 ", CalculationStrategy = " + calStrat +
                 '}';
     }
+
+    @Override
+    public double fst() {
+        return fst;
+    }
+
+    @Override
+    public double snd() {
+        return snd;
+    }
+
+    @Override
+    public double result() {
+        return result;
+    }
+
+    @Override
+    public CalculationStrategy calStrat() {
+        return calStrat;
+    }
 }

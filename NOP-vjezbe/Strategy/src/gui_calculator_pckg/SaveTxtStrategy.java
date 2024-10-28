@@ -7,9 +7,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class SaveTxtStrategy implements SaveDataStrategy<String>{
+
     @Override
     public void saveDataToFile(String filePath, List<String> data) {
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(new File(filePath)))){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))){
             for(String element : data){
                 bw.write(element);
                 bw.newLine();

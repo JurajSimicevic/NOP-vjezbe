@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-    private ViewPanel viewPanel;
+    static ViewPanel viewPanel;
     private FormPanel formPanel;
     private ToolBar toolBar;
 

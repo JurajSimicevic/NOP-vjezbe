@@ -1,6 +1,8 @@
 package gui_calculator_pckg;
 
-public class DivCalcStrategy implements CalculationStrategy{
+import java.io.Serializable;
+
+public class DivCalcStrategy implements CalculationStrategy {
     @Override
     public double performCalculation(double fst, double snd) {
         if(snd == 0){
