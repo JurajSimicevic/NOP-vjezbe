@@ -16,7 +16,6 @@ public class SaveTxtStrategy implements SaveDataStrategy<String>{
                 bw.newLine();
             }
             System.out.println("Data written as txt in file: " + filePath);
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -26,6 +26,10 @@ public class ToolBar extends JPanel implements ActionListener {
         activateToolBar();
     }
 
+    public void setToolBarListener(ToolBarListener toolBarListener) {
+        this.toolBarListener = toolBarListener;
+    }
+
     private void initComps() {
         this.saveAsText = new JButton("Save txt");
         this.saveObjects = new JButton("Save bin");
@@ -59,34 +63,38 @@ public class ToolBar extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getActionCommand().equals("Save TXT")) {
-            // Get text from JTextArea
-            String text = viewPanel.getText();
-            // Split text by new lines and convert it to a List
-            List<String> textList = Arrays.asList(text.split("\\r?\\n"));
-            SaveTxtStrategy sts = new SaveTxtStrategy();
-            sts.saveDataToFile("NOP-vjezbe/Strategy/src/gui_calculator_pckg/ListOfText", textList);
-
-        } else if (ae.getActionCommand().equals("Save BIN")) {
-            SaveBinStrategy sbs = new SaveBinStrategy();
-            List<CalculationFormData> list = viewPanel.getListOfObjects();
-            List<CalculationFormObjects> list2 = new ArrayList<>();
-            for(CalculationFormData cfd : list) {
-                CalculationFormObjects cfo = new CalculationFormObjects(cfd.fst(), cfd.snd(), cfd.result(), cfd.calStrat());
-                list2.add(cfo);
+        if (ae.getSource() == saveAsText) {
+            System.out.println("Clicked: " + saveAsText.getActionCommand());
+            if(toolBarListener != null){
+                toolBarListener.toolbarEventOccured(saveAsText.getActionCommand());
             }
-            sbs.saveDataToFile("NOP-vjezbe/Strategy/src/gui_calculator_pckg/ListOfObjects.bin", list2);
+        }
+        if (ae.getSource() == saveObjects) {
+            System.out.println("Clicked: " + saveObjects.getActionCommand());
+            if(toolBarListener != null) {
+                toolBarListener.toolbarEventOccured(saveObjects.getActionCommand());
+            }
 
-        } else if (ae.getActionCommand().equals("Load TXT")) {
-            LoadDataTxtStrategy ldts = new LoadDataTxtStrategy();
-            ldts.loadDataFromFile("NOP-vjezbe/Strategy/src/gui_calculator_pckg/ListOfText", viewPanel.getListOfObjects());
+        }
+        if (ae.getSource() == loadText) {
+            System.out.println("Clicked: " + loadText.getActionCommand());
+            if(toolBarListener != null) {
+                toolBarListener.toolbarEventOccured(loadText.getActionCommand());
+            }
 
-        } else if (ae.getActionCommand().equals("Load BIN")) {
-            LoadDataBinStrategy ldbs = new LoadDataBinStrategy();
-            ldbs.loadDataFromFile("NOP-vjezbe/Strategy/src/gui_calculator_pckg/ListOfObjects.bin", viewPanel.getListOfObjects());
+        }
+        if (ae.getSource() == loadObjects) {
+            System.out.println("Clicked: " + loadObjects.getActionCommand());
+            if(toolBarListener != null) {
+                toolBarListener.toolbarEventOccured(loadObjects.getActionCommand());
+            }
 
-        } else if( ae.getActionCommand().equals("Clear all")) {
-            viewPanel.clearAll();
+        }
+        if( ae.getSource() == clearAll) {
+            System.out.println("Clicked: " + clearAll.getActionCommand());
+            if(toolBarListener != null) {
+                toolBarListener.toolbarEventOccured(clearAll.getActionCommand());
+            }
         }
     }
 

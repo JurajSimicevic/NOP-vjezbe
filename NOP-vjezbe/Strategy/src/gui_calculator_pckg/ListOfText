@@ -1,3 +1,3 @@
-CalculationFormData{First Number = 123.0, Second Number =12.0, result = 135.0, CalculationStrategy = Adding}
-CalculationFormData{First Number = 123.0, Second Number =12.0, result = 111.0, CalculationStrategy = Subtracting}
-CalculationFormData{First Number = 123.0, Second Number =12.0, result = 1476.0, CalculationStrategy = Multiplying}
+CalculationFormData{First Number = 12.0, Second Number =13.0, result = 25.0, CalculationStrategy = Adding}
+CalculationFormData{First Number = 13.0, Second Number =13.0, result = 0.0, CalculationStrategy = Subtracting}
+CalculationFormData{First Number = 145.0, Second Number =143.0, result = 2.0, CalculationStrategy = Subtracting}

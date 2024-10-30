@@ -11,7 +11,6 @@ public class ViewPanel extends JPanel {
 
     private JTextArea textArea;
     private JScrollPane scrollPane;
-    private List<CalculationFormData> listOfObjects = new ArrayList<>();
 
     public ViewPanel(){
 
@@ -23,30 +22,24 @@ public class ViewPanel extends JPanel {
 
     public void addTextToViewPanel(CalculationFormData calculationRecord) {
         textArea.append(calculationRecord + "\n");
-        listOfObjects.add(calculationRecord);
+    }
+
+    public void addTextToViewPanel(String dataTxt){
+        textArea.append(dataTxt + "\n");
     }
 
     public String getText() {
         return textArea.getText();
     }
 
-    public List<CalculationFormData> getListOfObjects() {
-        return listOfObjects;
-    }
 
     public void read(BufferedReader reader, Object o) throws IOException {
         textArea.read(reader, o);
     }
 
     public void clearAll(){
-        textArea.setText("");
+        textArea.selectAll();
+        textArea.replaceSelection(null);
     }
 
-    public void clearListOfObjects (){
-        listOfObjects.clear();
-    }
-
-    public void addRecordToList(CalculationFormData calculationRecord){
-        listOfObjects.add(calculationRecord);
-    }
 }
