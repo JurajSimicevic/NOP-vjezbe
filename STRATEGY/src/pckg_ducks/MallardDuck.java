@@ -1,6 +1,6 @@
 package pckg_ducks;
 
-public class MallardDuck extends Duck{
+public class MallardDuck extends Duck {
     @Override
     protected void display() {
         System.out.println("Display for: " + getClass().getSimpleName());
