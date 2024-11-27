@@ -34,4 +34,14 @@ public class CalculationFormObjects implements Serializable {
     public CalculationStrategy getCalStrat() {
         return calStrat;
     }
+
+    @Override
+    public String toString() {
+        return "CalculationFormObjects{" +
+                "fst=" + fst +
+                ", snd=" + snd +
+                ", result=" + result +
+                ", calStrat=" + calStrat +
+                '}';
+    }
 }

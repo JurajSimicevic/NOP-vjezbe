@@ -13,22 +13,22 @@ public record CalculationFormData(double fst, double snd, double result, Calcula
     }
 
     @Override
-    public double fst() {
+    public double getFst() {
         return fst;
     }
 
     @Override
-    public double snd() {
+    public double getSnd() {
         return snd;
     }
 
     @Override
-    public double result() {
+    public double getResult() {
         return result;
     }
 
     @Override
-    public CalculationStrategy calStrat() {
+    public CalculationStrategy getCalStrat() {
         return calStrat;
     }
 }

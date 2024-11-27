@@ -11,8 +11,10 @@ public class SaveBinStrategy implements SaveDataStrategy<CalculationFormObjects>
 
         try (FileOutputStream fos = new FileOutputStream(file)) {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            for(CalculationFormObjects obj : data) {
-                oos.writeObject(obj);
+            for(CalculationFormRecord obj : data) {
+                CalculationFormData obj1 = (CalculationFormData) obj;
+                CalculationFormObjects cfo = new CalculationFormObjects(obj1.getFst(), obj1.getSnd(), obj1.getResult(), obj1.getCalStrat());
+                oos.writeObject(cfo);
             }
             oos.close();
         } catch (FileNotFoundException e) {
